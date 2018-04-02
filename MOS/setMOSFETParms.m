@@ -577,4 +577,7 @@ function MOD = setMOSFETParms(inMOD, Type)
             error(strcat('The value for TYPE(', Type, ')is invalid. See help set_MOSFET_parms for details.'));
             return;
     end
+
+    % Apply the parameter values to the model
+    MOD = MOD.setparms(parm_names, parm_vals, MOD);
 end
